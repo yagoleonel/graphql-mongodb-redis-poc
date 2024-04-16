@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import { User, usersToInsert } from "./models/user.model";
+import { Pokemon, pokemonsToInsert } from "./models/pokemon.model";
 
 export async function initDatabase(): Promise<void> {
   try {
@@ -10,7 +10,11 @@ export async function initDatabase(): Promise<void> {
       },
     });
 
-    await User.insertMany(usersToInsert());
+    // seed database
+    const isPopulated = await Pokemon.countDocuments()
+    if (!isPopulated) {
+      await Pokemon.insertMany(pokemonsToInsert());
+    }
   } catch (error) {
     console.error(error);
     throw error;

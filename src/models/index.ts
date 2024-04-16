@@ -1,2 +1,2 @@
-export { User } from "./user.model";
+export { Pokemon } from "./pokemon.model";
 

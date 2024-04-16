@@ -1,4 +1,4 @@
-import { UserResolvers, UserTypeDef } from "./user";
+import { PokemonResolvers, PokemonTypeDef } from "./pokemon";
 
-export const typeDefs = [UserTypeDef]
-export const resolvers = Object.assign({}, UserResolvers)
+export const typeDefs = [PokemonTypeDef]
+export const resolvers = Object.assign({}, PokemonResolvers)
